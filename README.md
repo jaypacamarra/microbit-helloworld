@@ -26,5 +26,5 @@ west build -b bbc_microbit samples/helloworld
 4. Flash the application to your microbit board.
 
 ```bash
-west flash samples/helloworld
+west flash
 ```
