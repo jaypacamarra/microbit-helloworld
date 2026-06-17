@@ -1,39 +1,30 @@
 # Microbit Hello World
 
-This repository can be used as a reference for people trying to learn how to program
-the microbit. The hello world program is built to run bare-metal.
+This repository can be used as a reference for people trying to learn
+how to program the microbit with zephyr. It contains a collection of reference
+applications that demonstrate the usage of the LED matrix, buttons, and
+various exposed peripherals on the microbit.
 
 ## Hardware
 
-Microbit v1.5
-- **application processor**: `nRF51822`
-- **interface processor**: `NXP KL26Z`
+You can learn more about the microbit hardware in the official docs: 
+[microbit documentation](https://microbit.org/get-started/user-guide/introduction/).
 
-The **application processor** is where your user code goes while the **interface processor**
-is in charge of loading your program in the application processor.
+## Getting Started
 
-## Program
+1. Follow the getting started steps from the Zephyr documentation, [Getting
+   Started](https://docs.zephyrproject.org/latest/develop/getting_started/index.html).
 
-This hello world program will print a scrolling "Hello World!" message
-on the 5x5 LED matrix.
+2. Clone this repository in the zephyr rtos workspace you have created.
 
-There is also the two user buttons `User Button A` and `User Button B` which
-will be used to decrement or increment (depending on which button you press) and 
-have the updated counter value displayed on the 5x5 LED matrix momentarily.
+3. Build the reference application of your choice.
 
-## Dependencies
+```bash
+west build -b bbc_microbit samples/helloworld
+```
 
-1. **Host OS** - `Ubuntu >= 22.04`. 
-2. **Build utils** - `cmake`, `ninja`, `arm-gcc` toolchain, `build-essentials`.
+4. Flash the application to your microbit board.
 
-## Building
-
-TODO
-
-## Flashing
-
-TODO
-
-## Debugging
-
-TODO
+```bash
+west flash samples/helloworld
+```
